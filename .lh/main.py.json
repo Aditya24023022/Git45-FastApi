@@ -1,0 +1,18 @@
+{
+    "sourceFile": "main.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1763140008915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1763140008915,
+            "name": "Commit-0",
+            "content": "from typing import Union\r\n\r\nfrom fastapi import FastAPI\r\n\r\napp = FastAPI()\r\n\r\n\r\n@app.get(\"/\")\r\ndef read_root():\r\n    return {\"Hello\": \"World\"}\r\n\r\n\r\n@app.get(\"/items/{item_id}\")\r\ndef read_item(item_id: int, q: Union[str, None] = None):\r\n    return {\"item_id\": item_id, \"q\": q}"
+        }
+    ]
+}
