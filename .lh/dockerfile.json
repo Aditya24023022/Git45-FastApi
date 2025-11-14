@@ -1,0 +1,22 @@
+{
+    "sourceFile": "dockerfile",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1763143862871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763144526659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,13 @@\n-# Use official Python image\r\n FROM python:3.10-slim\r\n \r\n-# Set working directory inside container\r\n WORKDIR /app\r\n \r\n-# Copy only requirements first (for caching)\r\n COPY requirements.txt .\r\n-\r\n-# Install dependencies\r\n RUN pip install --no-cache-dir -r requirements.txt\r\n \r\n-# Copy the entire project\r\n COPY . .\r\n \r\n-# Expose FastAPI port\r\n EXPOSE 8000\r\n \r\n-# Run FastAPI with Gunicorn + Uvicorn worker (production)\r\n-CMD [\"gunicorn\", \"-k\", \"uvicorn.workers.UvicornWorker\", \"main:app\", \"--bind\", \"0.0.0.0:8000\"]\r\n+CMD [\"uvicorn\", \"main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]\r\n+\r\n"
+                }
+            ],
+            "date": 1763143862871,
+            "name": "Commit-0",
+            "content": "# Use official Python image\r\nFROM python:3.10-slim\r\n\r\n# Set working directory inside container\r\nWORKDIR /app\r\n\r\n# Copy only requirements first (for caching)\r\nCOPY requirements.txt .\r\n\r\n# Install dependencies\r\nRUN pip install --no-cache-dir -r requirements.txt\r\n\r\n# Copy the entire project\r\nCOPY . .\r\n\r\n# Expose FastAPI port\r\nEXPOSE 8000\r\n\r\n# Run FastAPI with Gunicorn + Uvicorn worker (production)\r\nCMD [\"gunicorn\", \"-k\", \"uvicorn.workers.UvicornWorker\", \"main:app\", \"--bind\", \"0.0.0.0:8000\"]\r\n"
+        }
+    ]
+}

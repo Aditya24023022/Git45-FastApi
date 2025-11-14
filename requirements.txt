@@ -1,0 +1,5 @@
+Fastapi
+fastapi
+uvicorn
+gunicorn
+pydantic
